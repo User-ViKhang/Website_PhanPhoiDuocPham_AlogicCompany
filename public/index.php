@@ -2,9 +2,6 @@
 require("../model/database.php");
 require("../model/danhmuc.php");
 require("../model/mathang.php");
-
-
-
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
 } else {
@@ -33,17 +30,6 @@ switch ($action) {
             include("main.php");
         }
         break;
-    case "detail":
-        if (isset($_GET["id"])) {
-            $mahang = $_GET["id"];
-            $mh->tangluotxem($mahang);
-            $mhct = $mh->laymathangtheoid($mahang);
-            $madm = $mhct["danhmuc_id"];
-            $mathang = $mh->laymathangtheodanhmuc($madm);
-            include("detail.php");
-        }
-        break;
-
     default:
         break;
 }

@@ -5,15 +5,22 @@ include("inc/top.php");
 <?php 
 foreach($danhmuc as $d){ 
     $i = 0;
-?>
 <h3><a class="text-decoration-none text-info" href="index.php?action=group&id=<?php echo $d["id"]; ?>">
     <?php echo $d["tendanhmuc"]; ?></a></h3>
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-<?php 
-    foreach($mathang as $m){ 
-        if($m["danhmuc_id"] == $d["id"] && $i < 4){
-            $i++;
-?>
+
+    <?php
+
+    <h3><a class="text-decoration-none text-info" href="index.php?action=group&id=<?php echo $d["id"]; ?>">
+            <?php echo $d["tendanhmuc"]; ?>
+        </a></h3>
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <?php
+        foreach ($mathang as $m) {
+            if ($m["danhmuc_id"] == $d["id"] && $i < 4) {
+                $i++;
+                ?>
+
     <div class="col mb-5">
         <div class="card h-100 shadow">
             <!-- Sale badge-->
@@ -51,20 +58,23 @@ foreach($danhmuc as $d){
             </div>
         </div>
     </div>
-<?php
+
+            }
         }
     } 
 ?>
               
 </div>
-<?php 
-    if($i == 0) 
+    if ($i == 0)
         echo "<p>Danh mục hiện chưa có sản phẩm.</p>";
-    else 
-?>
-        <div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder" href="index.php?action=group&id=<?php echo $d["id"]; ?>">Xem thêm <?php echo $d["tendanhmuc"]; ?></a></div>
+    else
+    ?>
+<div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder"
+        href="index.php?action=group&id=<?php echo $d["id"]; ?>">Xem thêm
+        <?php echo $d["tendanhmuc"]; ?>
+    </a></div>
 <?php
-} 
+}
 ?>
 
 <?php
