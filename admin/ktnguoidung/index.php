@@ -1,4 +1,4 @@
-<?php
+<?php 
 require("../../model/database.php");
 require("../../model/nguoidung.php");
 
@@ -49,20 +49,16 @@ switch ($action) {
         $sodt = $_POST["txtdienthoai"];
         $hoten = $_POST["txthoten"];
         $hinhanh = $_POST["txthinhanh"];
-
         if ($_FILES["fhinh"]["name"] != null) {
             $hinhanh = basename($_FILES["fhinh"]["name"]);
             $duongdan = "../../images/users/" . $hinhanh;
             move_uploaded_file($_FILES["fhinh"]["tmp_name"], $duongdan);
         }
-
         $nd->capnhatnguoidung($mand, $email, $sodt, $hoten, $hinhanh);
 
         $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
         include("main.php");
         break;
-
-
     case "matkhau":
         include("changepass.php");
         break;
@@ -75,3 +71,4 @@ switch ($action) {
         break;
 }
 ?>
+

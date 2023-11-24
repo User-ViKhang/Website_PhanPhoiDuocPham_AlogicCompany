@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <title> Công ty phân phối dược phẩm - Alogic Company</title>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,32 +37,20 @@
                             data-bs-toggle="dropdown" aria-expanded="false">Danh mục sản phẩm</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php foreach ($danhmuc as $d): ?>
-<<<<<<< HEAD
-                                <li><a class="dropdown-item" href="?action=group&id=<?php echo $d["id"]; ?>">
-                                        <?php echo $d["tendanhmuc"]; ?>
-                                    </a></li>
-=======
                             <li><a class="dropdown-item" href="?action=group&id=<?php echo $d["id"]; ?>">
                                     <?php echo $d["tendanhmuc"]; ?></a></li>
->>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
                             <?php endforeach; ?>
                         </ul>
                     </li>
                 </ul>
                 <div class="d-flex">
                     <a href="#" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
-<<<<<<< HEAD
-                    <a href="index.php?action=hiengiohang" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ
-                        hàng <span class="badge bg-danger text-white ms-1 rounded-pill">0</span></a>
-=======
                     <a href="#" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ hàng <span
                             class="badge bg-danger text-white ms-1 rounded-pill">0</span></a>
->>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-1">
+        </nav>
+        
+        <!-- Section-->        
+        <section class="py-5">            
+            <div class="container px-4 px-lg-5 mt-1">

@@ -29,6 +29,7 @@ function xoamotmathang($id)
 }
 
 // Hàm lấy mảng các sản phẩm trong giohang
+$solg = intval($soluong);        
 function laygiohang()
 {
 
