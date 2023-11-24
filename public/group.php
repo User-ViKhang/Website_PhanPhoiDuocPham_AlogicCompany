@@ -14,7 +14,11 @@ if($mathang != null){
             <?php } // end if ?>
             <!-- Product image-->
             <a href="index.php?action=detail&id=<?php echo $m["id"]; ?>">
+<<<<<<< HEAD
                 <img  class="card-img-top" src="../<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmathang"]; ?>" />
+=======
+                <img class="card-img-top" src="../<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmathang"]; ?>" />
+>>>>>>> 479fac642d8c04b9d7f97b0124264e443e454389
             </a>
             <!-- Product details-->
             <div class="card-body p-4">

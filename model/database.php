@@ -1,10 +1,22 @@
 <?php
+<<<<<<< HEAD
 class DATABASE{
     private static $dns = "mysql:host=localhost;dbname=shop_btt;port=3306";
     private static $username = "root";
     private static $password = "vertrigo";
     private static $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, 
                                     PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8");    
+=======
+class DATABASE
+{
+    private static $dns = "mysql:host=localhost;dbname=shop_btt;port=3306";
+    private static $username = "root";
+    private static $password = "vertrigo";
+    private static $options = array(
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+    );
+>>>>>>> 479fac642d8c04b9d7f97b0124264e443e454389
     private static $db;
     
     private function __construct(){} 
