@@ -19,6 +19,20 @@ switch ($action) {
     case "null":
         include("main.php");
         break;
+<<<<<<< HEAD
+    case "group":
+        if (isset($_REQUEST["id"])) {
+            $madm = $_REQUEST["id"];
+            $dmuc = $dm->laydanhmuctheoid($madm);
+            $tendm = $dmuc["tendanhmuc"];
+            $mathang = $mh->laymathangtheodanhmuc($madm);
+            include("group.php");
+        } else {
+            include("main.php");
+        }
+        break;
+=======
+>>>>>>> origin/havikhang_dth205809
     default:
         break;
 }
