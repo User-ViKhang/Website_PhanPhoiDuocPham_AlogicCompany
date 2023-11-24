@@ -7,11 +7,16 @@ foreach ($danhmuc as $d) {
     $i = 0;
     ?>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
 <h3><a class="text-decoration-none text-info" href="index.php?action=group&id=<?php echo $d["id"]; ?>">
         <?php echo $d["tendanhmuc"]; ?>
     </a></h3>
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     <?php
+<<<<<<< HEAD
+=======
 =======
     <h3><a class="text-decoration-none text-info" href="index.php?action=group&id=<?php echo $d["id"]; ?>">
             <?php echo $d["tendanhmuc"]; ?>
@@ -19,11 +24,15 @@ foreach ($danhmuc as $d) {
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         <?php
 >>>>>>> origin/havikhang_dth205809
+>>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
         foreach ($mathang as $m) {
             if ($m["danhmuc_id"] == $d["id"] && $i < 4) {
                 $i++;
                 ?>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
     <div class="col mb-5">
         <div class="card h-100 shadow">
             <!-- Sale badge-->
@@ -71,6 +80,8 @@ foreach ($danhmuc as $d) {
         </div>
     </div>
     <?php
+<<<<<<< HEAD
+=======
 =======
                 <div class="col mb-5">
                     <div class="card h-100 shadow">
@@ -120,6 +131,7 @@ foreach ($danhmuc as $d) {
                 </div>
                 <?php
 >>>>>>> origin/havikhang_dth205809
+>>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
             }
         }
         ?>
@@ -128,19 +140,29 @@ foreach ($danhmuc as $d) {
 </div>
 <?php
 =======
+<<<<<<< HEAD
+</div>
+<?php
+=======
     </div>
     <?php
 >>>>>>> origin/havikhang_dth205809
+>>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
     if ($i == 0)
         echo "<p>Danh mục hiện chưa có sản phẩm.</p>";
     else
     ?>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
 <div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder"
         href="index.php?action=group&id=<?php echo $d["id"]; ?>">Xem thêm
         <?php echo $d["tendanhmuc"]; ?>
     </a></div>
 <?php
+<<<<<<< HEAD
+=======
 =======
     <div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder"
             href="index.php?action=group&id=<?php echo $d["id"]; ?>">Xem thêm
@@ -148,6 +170,7 @@ foreach ($danhmuc as $d) {
         </a></div>
     <?php
 >>>>>>> origin/havikhang_dth205809
+>>>>>>> 5c5381ad49a59b2099d97418c36022c78bcf56ed
 }
 ?>
 
