@@ -9,7 +9,7 @@ class MATHANG
     private $giaban;
     private $soluongton;
     private $hinhanh;
-    private $danhmucid;
+    private $danhmuc_id;
     private $luotxem;
     private $luotmua;
 
@@ -128,6 +128,23 @@ class MATHANG
             exit();
         }
     }
+    public function laymathangtheodanhmuclimit_2($danhmuc_id)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM mathang WHERE danhmuc_id=:madm LIMIT 2";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":madm", $danhmuc_id);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+
 
     // Lấy mặt hàng theo id
     public function laymathangtheoid($id)
