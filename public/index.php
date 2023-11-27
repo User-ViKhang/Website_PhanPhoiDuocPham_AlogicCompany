@@ -19,20 +19,19 @@ switch ($action) {
         $mathang = $mh->laymathang();
         include("main.php");
         break;
-    case "group": 
-        if(isset($_REQUEST["id"])){
+    case "group":
+        if (isset($_REQUEST["id"])) {
             $madm = $_REQUEST["id"];
             $dmuc = $dm->laydanhmuctheoid($madm);
-            $tendm =  $dmuc["tendanhmuc"];   
+            $tendm = $dmuc["tendanhmuc"];
             $mathang = $mh->laymathangtheodanhmuc($madm);
             include("group.php");
-        }
-        else{
+        } else {
             include("main.php");
         }
         break;
-    case "detail": 
-        if(isset($_GET["id"])){
+    case "detail":
+        if (isset($_GET["id"])) {
             $mahang = $_GET["id"];
             // tăng lượt xem lên 1
             $mh->tangluotxem($mahang);
@@ -40,10 +39,10 @@ switch ($action) {
             $mhct = $mh->laymathangtheoid($mahang);
             // lấy các mặt hàng cùng danh mục
             $madm = $mhct["danhmuc_id"];
-            $mathang = $mh->laymathangtheodanhmuc($madm);
+            $mathang = $mh->laymathangtheodanhmuclimit_2($madm);
             include("detail.php");
         }
-        break;    
+        break;
     default:
         break;
 }
