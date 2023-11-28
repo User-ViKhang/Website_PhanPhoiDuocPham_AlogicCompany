@@ -83,6 +83,15 @@ switch ($action) {
             break;
         }
         break;
+    case "searchkey":
+        if (isset($_POST["key"])) {
+            $key = $_POST["key"];
+            $mathang = $mh->laymathangtheokey($key);
+            include("main.php");
+        } else {
+            echo "Err";
+        }
+        break;
     case "xoaitem":
         xoamotmathang($_GET["id"]);
         $giohang = laygiohang();
@@ -91,4 +100,5 @@ switch ($action) {
     default:
         break;
 }
+
 ?>

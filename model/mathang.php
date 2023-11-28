@@ -1,4 +1,4 @@
-<?php
+
 class MATHANG
 {
     // khai báo các thuộc tính
@@ -119,6 +119,21 @@ class MATHANG
             $sql = "SELECT * FROM mathang WHERE danhmuc_id=:madm";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":madm", $danhmuc_id);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+    public function laymathangtheokey($key)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM mathang WHERE tenmathang like '%$key%'";
+            $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
             return $result;
@@ -273,4 +288,5 @@ class MATHANG
     }
 
 }
+
 ?>

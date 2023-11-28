@@ -1,7 +1,23 @@
 <?php
 include("inc/top.php");
 ?>
-
+<div class="contaier">
+    <div class="row">
+        <div class="col col-md-12">
+            <form action="index.php" method="post">
+                <div class="text-end">
+                    <span style="position: relative;">
+                        <span style="position: absolute; left: 10px; top: 0px"><i class="bi bi-search"></i></span>
+                        <input type="hidden" name="action" value="searchkey">
+                        <input style="border: thin solid #ccc; width: 30%; border-radius: 5px; padding: 5px 30px"
+                            type="text" name="key" id="" placeholder="Tìm kiếm">
+                        <input class="btn btn-primary" type="submit" value="Tìm">
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <?php
 foreach ($danhmuc as $d) {
     $i = 0;
@@ -83,4 +99,5 @@ foreach ($danhmuc as $d) {
 
 <?php
 include("inc/bottom.php");
+
 ?>
