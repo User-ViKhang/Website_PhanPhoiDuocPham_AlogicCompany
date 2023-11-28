@@ -27,9 +27,7 @@ function xoamotmathang($id)
         unset($_SESSION['giohang'][$id]);
     }
 }
-
 // Hàm lấy mảng các sản phẩm trong giohang
-$solg = intval($soluong);        
 function laygiohang()
 {
 

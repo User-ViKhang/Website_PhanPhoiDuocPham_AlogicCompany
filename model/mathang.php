@@ -128,6 +128,21 @@ class MATHANG
             exit();
         }
     }
+    public function laymathangtheokey($key)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM mathang WHERE tenmathang like '%$key%'";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
     public function laymathangtheodanhmuclimit_2($danhmuc_id)
     {
         $dbcon = DATABASE::connect();
