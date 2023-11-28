@@ -1,3 +1,4 @@
+
 <?php include("../inc/top.php"); ?>
 <div>
     <h3>Cập nhật mặt hàng</h3>
@@ -66,4 +67,3 @@ ClassicEditor
     });
 </script>
 
-<?php include("../inc/bottom.php"); ?>
