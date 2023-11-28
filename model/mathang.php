@@ -1,4 +1,4 @@
-
+<?php
 class MATHANG
 {
     // khai báo các thuộc tính
