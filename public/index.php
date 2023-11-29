@@ -3,6 +3,7 @@ require("../model/database.php");
 require("../model/danhmuc.php");
 require("../model/mathang.php");
 require("../model/giohang.php");
+
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
 } else {
@@ -49,6 +50,7 @@ switch ($action) {
         require("cart.php");
         break;
     case "chovaogio":
+        // $_SESSION["nguoidung"] = array();
         if (isset($_REQUEST["id"]))
             $id = $_REQUEST["id"];
         if (isset($_REQUEST["soluong"]))

@@ -1,4 +1,3 @@
-
 <?php
 // Tạo mảng SESSION giohang rỗng nếu nó không tồn tại
 if (!isset($_SESSION['giohang'])) {

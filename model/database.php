@@ -1,5 +1,4 @@
 <?php
-
 class DATABASE
 {
     private static $dns = "mysql:host=localhost;dbname=duocpham_alogic;port=3306";
