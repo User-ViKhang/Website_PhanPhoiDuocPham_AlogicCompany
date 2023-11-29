@@ -32,16 +32,26 @@
                             data-bs-toggle="dropdown" aria-expanded="false">Danh mục sản phẩm</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php foreach ($danhmuc as $d): ?>
-                                <li><a class="dropdown-item" href="index.php?action=group&id=<?php echo $d["id"]; ?>">
-                                        <?php echo $d["tendanhmuc"]; ?>
-                                    </a></li>
+                            <li><a class="dropdown-item" href="index.php?action=group&id=<?php echo $d["id"]; ?>">
+                                    <?php echo $d["tendanhmuc"]; ?>
+                                </a></li>
                             <?php endforeach; ?>
                         </ul>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <a href="#" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
-                    <a href="index.php?action=hiengiohang" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ
+                <div style="align-items: center;" class="d-flex">
+                    <?php
+                    if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]) {
+                        echo '<span style="color: white; padding-right: 10px">' . $_SESSION['nguoidung']['hoten'] . '</span>';
+                        echo '<a href="../admin/ktnguoidung/index.php?action=dangxuat" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng
+                        xuất</a>&nbsp;';
+                    } else {
+                        echo '<a href="../admin/index.php" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng
+                            nhập</a>&nbsp;';
+                    }
+                    ?>
+                    <a href="index.php?action=hiengiohang" class="btn btn-outline-light"><i class="bi bi-cart3"></i>
+                        Giỏ
                         hàng <span class="badge bg-danger text-white ms-1 rounded-pill">
                             <?= count($_SESSION["giohang"]) ?>
                         </span></a>

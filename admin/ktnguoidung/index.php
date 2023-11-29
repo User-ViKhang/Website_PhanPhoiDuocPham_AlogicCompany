@@ -1,10 +1,9 @@
-<?php 
+<?php
 require("../../model/database.php");
 require("../../model/nguoidung.php");
 
 // Biến $isLogin cho biết người dùng đăng nhập chưa
 $isLogin = isset($_SESSION["nguoidung"]);
-
 
 // Xét xem có thao tác nào được chọn
 if (isset($_REQUEST["action"])) {
@@ -28,9 +27,12 @@ switch ($action) {
     case "xldangnhap":
         $email = $_REQUEST["txtemail"];
         $matkhau = $_REQUEST["txtmatkhau"];
-        if ($nd->kiemtranguoidunghople($email, $matkhau) == TRUE) {
+        if ($nd->kiemtraadminhople_1($email, $matkhau) == TRUE) {
             $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email); // đặt biến session
             include("main.php");
+        } elseif ($nd->kiemtranguoidunghople_3($email, $matkhau) == TRUE) {
+            $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
+            header("Location: ../../public/index.php");
         } else {
             include("login.php");
         }
@@ -38,7 +40,7 @@ switch ($action) {
     case "dangxuat":
         unset($_SESSION["nguoidung"]);  // hủy biến session
         //include("login.php");         // hiển thị trang login
-        header("location:../../index.php");     // hoặc chuyển hướng ra bên ngoài (trang dành cho khách)
+        header("location: ../index.php");     // hoặc chuyển hướng ra bên ngoài (trang dành cho khách)
         break;
     case "hoso":
         include("profile.php");
@@ -71,4 +73,3 @@ switch ($action) {
         break;
 }
 ?>
-
